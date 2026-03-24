@@ -1,16 +1,12 @@
-/* FLIP CARD */
-
 document.querySelectorAll(".card").forEach(card => {
 card.addEventListener("click", () => {
 card.classList.toggle("flipped");
 });
 });
 
-
-/* MUSIC PLAYER */
-
 const music = document.getElementById("bg-music");
 const btn = document.getElementById("music-btn");
+const slider = document.getElementById("music-slider");
 
 let scrollInterval = null;
 
@@ -43,20 +39,22 @@ scrollInterval = null;
 
 });
 
+/* UPDATE SLIDER */
 
-/* STOP SCROLL SAAT LAGU SELESAI */
+music.addEventListener("timeupdate", () => {
 
-music.addEventListener("ended", () => {
-
-clearInterval(scrollInterval);
-scrollInterval = null;
-
-btn.innerHTML = "▶";
+slider.max = music.duration;
+slider.value = music.currentTime;
 
 });
 
+/* DRAG SLIDER */
 
-/* HEADER SCROLL EFFECT */
+slider.addEventListener("input", () => {
+
+music.currentTime = slider.value;
+
+});
 
 let lastScroll = 0;
 const header = document.querySelector("header");
