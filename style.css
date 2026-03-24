@@ -302,17 +302,26 @@ margin-top:120px;
 
 /* MOBILE FIX (ubah jadi grid, bukan masonry) */
 
+/* FIX MOBILE GAP */
+
 @media (max-width:600px){
 
 .gallery{
-display:grid;
+display:grid !important;
 grid-template-columns: repeat(2, 1fr);
 gap:10px;
-column-count:unset; /* matikan masonry */
+
+/* MATIKAN MASONRY */
+column-count:unset !important;
 }
 
 .card{
+break-inside:unset;
 margin-bottom:0;
+}
+
+.card-inner{
+height:100%;
 }
 
 .card-front img{
