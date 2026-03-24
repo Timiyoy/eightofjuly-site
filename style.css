@@ -322,3 +322,14 @@ display:block;
 }
 
 }
+
+@media (max-width:600px){
+
+#music-player{
+top:auto;
+bottom:20px;
+left:50%;
+transform:translateX(-50%) scale(0.9);
+}
+
+}
