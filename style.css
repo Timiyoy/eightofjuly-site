@@ -299,3 +299,26 @@ width:90%;
 margin:auto;
 margin-top:120px;
 }
+
+/* MOBILE FIX (ubah jadi grid, bukan masonry) */
+
+@media (max-width:600px){
+
+.gallery{
+display:grid;
+grid-template-columns: repeat(2, 1fr);
+gap:10px;
+column-count:unset; /* matikan masonry */
+}
+
+.card{
+margin-bottom:0;
+}
+
+.card-front img{
+width:100%;
+height:auto;
+display:block;
+}
+
+}
